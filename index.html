@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0px;
+      border: none !important;
+    }
+
+    body {
+      background-image: url("img/default bg.jpg");
+      /* background-color: #292a2d; */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar:hover {
+      width: 10px;
+    }
+
+    /*--------- Track ----------*/
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+    /*----------- Handle ---------*/
+    ::-webkit-scrollbar-thumb {
+      background: #ffffff85;
+      border-radius: 10px;
+    }
+
+    /*---------- Handle on hover --------------*/
+    ::-webkit-scrollbar-thumb:hover {
+      background: #140606dc;
+    }
+
+    .containerforcustom {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .head {
+      margin-bottom: 1.3rem;
+    }
+
+    .head span {
+      margin: 0px 0px 0px -22px;
+    }
+
+    .search-box {
+      border: none;
+    }
+
+    .search-icon {
+      border: none;
+      margin: 0px -6px 0px 0px;
+      border-radius: 24px 0px 0px 24px;
+    }
+
+    .search-input {
+      border: none;
+      border-radius: 0px 24px 24px 0px;
+      padding: 21px 19px;
+    }
+
+    .search-input:focus {
+      box-shadow: none;
+    }
+
+    .gmail:hover {
+      text-decoration: underline;
+    }
+
+    .image:hover {
+      text-decoration: underline;
+    }
+
+    .main-input {
+      justify-content: center;
+      flex-wrap: wrap;
+      display: flex;
+      flex-direction: column;
+      height: 57%;
+    }
+
+    .side__bar {
+      position: fixed;
+      width: 200px;
+      height: 100%;
+      top: 0;
+      right: -200px;
+      background-color: #292a2d;
+      text-align: center;
+      overflow-y: scroll;
+      display: block;
+      padding: 5px;
+      transition: 0.5s;
+    }
+
+    .side__bar.active {
+      right: 1px;
+    }
+
+    .image-change {
+      cursor: pointer;
+    }
+
+    /*--------------------------------------- Images Css Starts ----------------------------------*/
+
+    .img1 {
+      width: 95%;
+      height: auto;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .img2 {
+      width: 95%;
+      height: auto;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .img3 {
+      width: 95%;
+      height: auto;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .img4 {
+      width: 95%;
+      height: auto;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .img5 {
+      width: 95%;
+      height: auto;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .img6 {
+      width: 95%;
+      height: auto;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .img7 {
+      width: 95%;
+      height: auto;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .img8 {
+      width: 95%;
+      height: auto;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .img9 {
+      width: 95%;
+      height: auto;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .img10 {
+      width: 95%;
+      height: auto;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .img11 {
+      width: 95%;
+      height: auto;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    /*--------------------------------------- Images Css End ----------------------------------*/
+  </style>
+
+  <body id="body">
+    <div class="container containerforcustom">
+      <div class="side-container">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link text-white gmail" href="#">Gmail</a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link text-white text-decoration-underline image"
+              href="#"
+              >Image</a
+            >
+          </li>
+
+          <li
+            class="nav-item ml-3 image-change"
+            id="show"
+            onclick="myFunctions()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="21"
+              height="35"
+              fill="white"
+              class="bi bi-menu-button-wide-fill"
+              viewBox="0 0 16 5">
+              <path
+                d="M1.5 0A1.5 1.5 0 0 0 0 1.5v2A1.5 1.5 0 0 0 1.5 5h13A1.5 1.5 0 0 0 16 3.5v-2A1.5 1.5 0 0 0 14.5 0h-13zm1 2h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1zm9.927.427A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0l-.396-.396zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
+            </svg>
+          </li>
+
+          <li
+            class="nav-item ml-3 image-change"
+            id="hide"
+            onclick="myFunctionh()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="21"
+              height="35"
+              fill="white"
+              class="bi bi-menu-button-wide-fill"
+              viewBox="0 0 16 5">
+              <path
+                d="M1.5 0A1.5 1.5 0 0 0 0 1.5v2A1.5 1.5 0 0 0 1.5 5h13A1.5 1.5 0 0 0 16 3.5v-2A1.5 1.5 0 0 0 14.5 0h-13zm1 2h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1zm9.927.427A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0l-.396-.396zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
+            </svg>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main-input">
+        <h2 class="head text-center text-white display-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="272" height="110">
+            <path
+              fill="#EA4335"
+              d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" />
+            <path
+              fill="#FBBC05"
+              d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" />
+            <path
+              fill="#4285F4"
+              d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" />
+            <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z" />
+            <path
+              fill="#EA4335"
+              d="m262.02 54.48 7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98 19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" />
+            <path
+              fill="#4285F4"
+              d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" />
+          </svg>
+        </h2>
+        <form action="">
+          <div class="input-group w-50 search-box text-center mx-auto">
+            <span class="input-group-text search-icon bg-light">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="13"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+              </svg>
+            </span>
+
+            <input
+              type="search"
+              spellcheck="false"
+              class="form-control search-input bg-light"
+              placeholder="Search Google or type a URL"
+              aria-label="Search Google or type a URL"
+              aria-describedby="basic-addon1" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!------------------------------------- Images HTML Start  --------------------------------------->
+
+    <div class="side__bar" id="view">
+      <div>
+        <img
+          onclick="myFunction(this.src,this.id,this.href)"
+          id="image1"
+          class="img1"
+          src="img/bg1.jpg"
+          alt="" />
+      </div>
+      <div>
+        <img
+          onclick="myFunction(this.src,this.id,this.href)"
+          id="image2"
+          class="img2"
+          src="img/bg2.jpg"
+          alt="" />
+      </div>
+      <div>
+        <img
+          onclick="myFunction(this.src,this.id,this.href)"
+          id="image3"
+          class="img3"
+          src="img/bg3.jpg"
+          alt="" />
+      </div>
+      <div>
+        <img
+          onclick="myFunction(this.src,this.id,this.href)"
+          id="image4"
+          class="img4"
+          src="img/bg4.jpg"
+          alt="" />
+      </div>
+      <div>
+        <img
+          onclick="myFunction(this.src,this.id,this.href)"
+          id="image5"
+          class="img5"
+          src="img/bg5.jpg"
+          alt="" />
+      </div>
+      <div>
+        <img
+          onclick="myFunction(this.src,this.id,this.href)"
+          id="image6"
+          class="img6"
+          src="img/bg6.jpg"
+          alt="" />
+      </div>
+      <div>
+        <img
+          onclick="myFunction(this.src,this.id,this.href)"
+          id="image7"
+          class="img7"
+          src="img/bg7.jpg"
+          alt="" />
+      </div>
+      <div>
+        <img
+          onclick="myFunction(this.src,this.id,this.href)"
+          id="image8"
+          class="img8"
+          src="img/bg8.jpg"
+          alt="" />
+      </div>
+      <div>
+        <img
+          onclick="myFunction(this.src,this.id,this.href)"
+          id="image9"
+          class="img9"
+          src="img/bg9.jpg"
+          alt="" />
+      </div>
+      <div>
+        <img
+          onclick="myFunction(this.src,this.id,this.href)"
+          class="img10"
+          src="img/bg10.jpg"
+          alt="img10" />
+      </div>
+      <div>
+        <img
+          onclick="myFunction(this.src,this.id,this.href)"
+          class="image11"
+          src="img/bg11.jpg"
+          alt="" />
+      </div>
+    </div>
+
+    <!------------------------------------- Images HTML End  --------------------------------------->
+
+    <!------------------------------------------- images Js Starts -------------------------------------------->
+    <script>
+      function myFunctions() {
+        var showhide = document.getElementById("view");
+        showhide.classList.add("active");
+      }
+      function myFunctionh() {
+        var showhide = document.getElementById("view");
+        showhide.classList.remove("active");
+      }
+
+      var bbd = document.getElementById("body");
+
+      function myFunction(src, id, href) {
+        bbd.style.backgroundImage = "url(" + src + ")";
+        // alert(href);
+      }
+
+      // var bbd = document.getElementById("body");
+      // function myFunction(this.src,this.id,this.href) {
+      //   var fgfg = document.getElementById("image2").src;
+      //   bbd.style.backgroundImage = "url(" + fgfg + ")";
+      // }
+      // var bbd = document.getElementById("body");
+      // function myFunction(this.src,this.id,this.href) {
+      //   var fgfg = document.getElementById("image3").src;
+      //   bbd.style.backgroundImage = "url(" + fgfg + ")";
+      // }
+      // var bbd = document.getElementById("body");
+      // function myFunction(this.src,this.id,this.href) {
+      //   var fgfg = document.getElementById("image4").src;
+      //   bbd.style.backgroundImage = "url(" + fgfg + ")";
+      // }
+      // var bbd = document.getElementById("body");
+      // function myFunction(this.src,this.id,this.href) {
+      //   var fgfg = document.getElementById("image5").src;
+      //   bbd.style.backgroundImage = "url(" + fgfg + ")";
+      // }
+      // var bbd = document.getElementById("body");
+      // function myFunction(this.src,this.id,this.href) {
+      //   var fgfg = document.getElementById("image6").src;
+      //   bbd.style.backgroundImage = "url(" + fgfg + ")";
+      // }
+      // var bbd = document.getElementById("body");
+      // function myFunction(this.src,this.id,this.href) {
+      //   var fgfg = document.getElementById("image7").src;
+      //   bbd.style.backgroundImage = "url(" + fgfg + ")";
+      // }
+      // var bbd = document.getElementById("body");
+      // function myFunction(this.src,this.id,this.href) {
+      //   var fgfg = document.getElementById("image8").src;
+      //   bbd.style.backgroundImage = "url(" + fgfg + ")";
+      // }
+      // var bbd = document.getElementById("body");
+      // function myFunction(this.src,this.id,this.href) {
+      //   var fgfg = document.getElementById("image9").src;
+      //   bbd.style.backgroundImage = "url(" + fgfg + ")";
+      // }
+      // var bbd = document.getElementById("body");
+      // function myFunction(this.src,this.id,this.href) {
+      //   var fgfg = document.getElementById("image10").src;
+      //   bbd.style.backgroundImage = "url(" + fgfg + ")";
+      // }
+      // var bbd = document.getElementById("body");
+      // function myFunction(this.src,this.id,this.href) {
+      //   var fgfg = document.getElementById("image11").src;
+      //   bbd.style.backgroundImage = "url(" + fgfg + ")";
+      // }
+    </script>
+
+    <!------------------------------------------- images Js End -------------------------------------------->
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
